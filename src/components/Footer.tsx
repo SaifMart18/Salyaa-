@@ -20,7 +20,7 @@ export default function Footer() {
           <div className={`space-y-8 ${isRTL ? 'text-right' : 'text-left'}`}>
             <Link to="/" className={`flex items-center gap-4 ${isRTL ? 'justify-end' : 'flex-row-reverse justify-end'}`}>
               <div className="w-24 h-24 rounded-full overflow-hidden border border-brand-blue/30 flex items-center justify-center bg-white/5 p-1.5">
-                <img src="https://lh3.googleusercontent.com/d/11V_O87SdW-ObGeHEPpYS_-FxaNVn7X9V" alt="Salyaa Logo" className="w-full h-full object-contain rounded-full" referrerPolicy="no-referrer" />
+                <img src="https://lh3.googleusercontent.com/d/11V_O87SdW-ObGeHEPpYS_-FxaNVn7X9V" alt="salyaa Logo" className="w-full h-full object-contain rounded-full" referrerPolicy="no-referrer" />
               </div>
               <div className="flex flex-col leading-none text-right">
                 <span className="text-3xl font-display font-bold tracking-tighter text-white">sal<span className="text-brand-blue">yaa</span></span>

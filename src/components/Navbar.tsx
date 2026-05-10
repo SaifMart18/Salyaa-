@@ -65,7 +65,7 @@ export default function Navbar() {
         <div className={isRTL ? 'order-first' : 'order-last'}>
           <Link to="/" className={`flex items-center gap-2 md:gap-3 group ${isRTL ? '' : 'flex-row-reverse'}`}>
             <div className="w-20 h-20 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-brand-blue/30 shadow-[0_0_30px_rgba(59,130,246,0.4)] group-hover:scale-110 transition-all flex items-center justify-center bg-white/5 p-1.5">
-              <img src="https://lh3.googleusercontent.com/d/11V_O87SdW-ObGeHEPpYS_-FxaNVn7X9V" alt="Salyaa Logo" className="w-full h-full object-contain rounded-full" referrerPolicy="no-referrer" />
+              <img src="https://lh3.googleusercontent.com/d/11V_O87SdW-ObGeHEPpYS_-FxaNVn7X9V" alt="salyaa Logo" className="w-full h-full object-contain rounded-full" referrerPolicy="no-referrer" />
             </div>
             <div className={`flex flex-col leading-none ${isRTL ? 'text-right' : 'text-right'}`}>
               <span className="text-xl md:text-3xl font-bold tracking-tighter text-white">sal<span className="text-brand-blue">yaa</span></span>

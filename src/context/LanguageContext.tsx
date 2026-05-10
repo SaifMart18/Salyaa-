@@ -17,27 +17,27 @@ export const translations: Translations = {
   navAbout: { en: 'About', ar: 'من نحن' },
   navContact: { en: 'Contact', ar: 'اتصل بنا' },
   startProject: { en: 'Start Project', ar: 'ابدأ مشروعك' },
-  
-  // Hero Section Exact from Image (Salyaa Rebranded)
-  heroBadge: { en: 'Salyaa Web Design Company', ar: 'شركة تصميم مواقع Salyaa' },
+
+  // Hero Section Exact from Image (salyaa Rebranded)
+  heroBadge: { en: 'salyaa Web Design Company', ar: 'شركة تصميم مواقع salyaa' },
   heroTitle1: { en: 'Web Design Agency | We Build Your ', ar: 'شركة تصميم مواقع | نبني ' },
   heroTitleHighlight: { en: 'Digital Excellence', ar: 'تميزكم' },
   heroTitle2: { en: ' ', ar: ' الرقمي' },
   heroSub: { 
-    en: 'At Salyaa, we transform your ideas into advanced digital platforms. As a web design agency, we provide integrated software solutions to increase your sales. We rely on WordPress, Next.js, and custom programming to build an exceptional user experience for our clients.', 
-    ar: 'في Salyaa، نحول أفكاركم إلى منصات رقمية متطورة. بصفتنا شركة تصميم مواقع، نقدم حلولاً برمجية متكاملة لزيادة مبيعاتكم. نعتمد على أنظمة WordPress، تطبيقات Next.js، وحلول البرمجة الخاصة لنبني لعملائنا تجربة مستخدم استثنائية.' 
+    en: 'At salyaa, we transform your ideas into advanced digital platforms. As a web design agency, we provide integrated software solutions to increase your sales. We rely on WordPress, Next.js, and custom programming to build an exceptional user experience for our clients.', 
+    ar: 'في salyaa، نحول أفكاركم إلى منصات رقمية متطورة. بصفتنا شركة تصميم مواقع، نقدم حلولاً برمجية متكاملة لزيادة مبيعاتكم. نعتمد على أنظمة WordPress، تطبيقات Next.js، وحلول البرمجة الخاصة لنبني لعملائنا تجربة مستخدم استثنائية.' 
   },
   heroStartBtn: { en: 'Start Your Project Now', ar: 'ابدأ مشروعك الآن' },
   heroWorksBtn: { en: 'View Our Works', ar: 'عرض أعمالنا' },
   heroStatProjects: { en: 'Successful Projects', ar: 'مشروع ناجح' },
   heroStatYears: { en: 'Years of Experience', ar: 'سنوات من الخبرة' },
-
+  
   // New Sections from Video
   aboutPartnerTitle: { en: 'Your Strategic Partner for Digital Success and Business Development', ar: 'شريكك الاستراتيجي للنجاح الرقمي وتطوير الأعمال' },
-  aboutPartnerDesc: { en: 'At Salyaa, we go beyond core web development. We merge creative design with strategic planning to ensure your digital presence delivers clear ROI.', ar: 'في Salyaa، ندمج التصميم الإبداعي مع التخطيط الاستراتيجي لضمان أن حضورك الرقمي يحقق عائداً واضحاً على الاستثمار.' },
+  aboutPartnerDesc: { en: 'At salyaa, we go beyond core web development. We merge creative design with strategic planning to ensure your digital presence delivers clear ROI.', ar: 'في salyaa، ندمج التصميم الإبداعي مع التخطيط الاستراتيجي لضمان أن حضورك الرقمي يحقق عائداً واضحاً على الاستثمار.' },
   aboutPoint1: { en: 'Expert team specialized in UI/UX and Web Performance', ar: 'فريق خبراء متخصصون في تجربة المستخدم (UI/UX) وتطوير الويب' },
   aboutPoint2: { en: 'High-performance software solutions with scalability', ar: 'حلول برمجية بأعلى كفاءة لضمان سرعة تصفح استثنائية' },
-  aboutMoreLink: { en: 'Learn more about Salyaa', ar: 'تعرف أكثر على شركة سيلية' },
+  aboutMoreLink: { en: 'Learn more about salyaa', ar: 'تعرف أكثر على شركة سيلية' },
 
   servicesSectionTitle: { en: 'Integrated Software Solutions for Your Digital Business', ar: 'حلول برمجية متكاملة لدعم أعمالك الرقمية' },
   serviceEcommerce: { en: 'E-commerce Development', ar: 'برمجة المتاجر الإلكترونية' },
@@ -64,14 +64,14 @@ export const translations: Translations = {
   testimonial1Name: { en: 'Mariam Al-Shalawi', ar: 'مريم الشلاوي' },
   testimonial1Role: { en: 'CEO - Smart Digital Solutions', ar: 'المدير التنفيذي - سمارت للخدمات الرقمية' },
   testimonial1Text: { 
-    en: 'We needed reliability and speed. The integrated e-commerce services and Salyaa development made our site a leader in our industry from day one.', 
-    ar: 'كنا نحتاج موثوقية وبرمجة، خدمات المتجر الإلكتروني المتكاملة بذكاء وتطوير Salyaa جعلت من موقعنا واجهة وسجل الريادة من اليوم الأول.' 
+    en: 'We needed reliability and speed. The integrated e-commerce services and salyaa development made our site a leader in our industry from day one.', 
+    ar: 'كنا نحتاج موثوقية وبرمجة، خدمات المتجر الإلكتروني المتكاملة بذكاء وتطوير salyaa جعلت من موقعنا واجهة وسجل الريادة من اليوم الأول.' 
   },
   testimonial2Name: { en: 'Khalid Al-Mansour', ar: 'خالد المنصور' },
   testimonial2Role: { en: 'Executive Director - Al-Ma\'ar Information Technology', ar: 'المدير التنفيذي - شركة المعار لتقنية المعلومات' },
   testimonial2Text: { 
-    en: 'Salyaa developed our corporate site with high professionalism and an exceptional browsing experience that helped us achieve our goals effectively.', 
-    ar: 'لقد وفرنا مع Salyaa موقع شركة معمار للتطوير الذكية بشكل احترافي مع تجربة تصفح رائعة وسريعة جعلتنا نحقق أهدافنا بفعالية.' 
+    en: 'salyaa developed our corporate site with high professionalism and an exceptional browsing experience that helped us achieve our goals effectively.', 
+    ar: 'لقد وفرنا مع salyaa موقع شركة معمار للتطوير الذكية بشكل احترافي مع تجربة تصفح رائعة وسريعة جعلتنا نحقق أهدافنا بفعالية.' 
   },
   faqSectionTitle: { en: 'Have Questions? We Have Answers', ar: 'لديك استفسارات؟ لدينا الإجابات' },
   ctaReadyTitle: { en: 'Ready to turn your vision into reality?', ar: 'جاهز لتحويل رؤيتك إلى واقع؟' },
@@ -108,7 +108,7 @@ export const translations: Translations = {
   // Home Page New Sections
   homeAboutTitle: { en: 'We Are More Than Just An Agency', ar: 'نحن أكثر من مجرد وكالة' },
   homeAboutSub: { en: 'We are your strategic partners in the digital world. Our team combines creative artistry with technical precision to build products that redefine industries.', ar: 'نحن شركاؤكم الاستراتيجيون في العالم الرقمي. يجمع فريقنا بين الفن الإبداعي والدقة التقنية لبناء منتجات تعيد تعريف الصناعات.' },
-  homeChooseTitle: { en: 'Why Brands Choose Salyaa', ar: 'لماذا تختار العلامات التجارية سيلية' },
+  homeChooseTitle: { en: 'Why Brands Choose salyaa', ar: 'لماذا تختار العلامات التجارية سيلية' },
   homeChooseSub: { en: 'We don\'t follow trends; we set them. Our process ensures that your digital identity is not just seen, but remembered.', ar: 'نحن لا نتبع الصيحات، بل نصنعها. تضمن عمليتنا أن هويتك الرقمية ليست مجرد رؤية، بل تظل في الذاكرة.' },
   stat1Label: { en: 'Success Projects', ar: 'مشروع ناجح' },
   stat2Label: { en: 'Happy Clients', ar: 'عميل سعيد' },
@@ -126,7 +126,7 @@ export const translations: Translations = {
   footerServices: { en: 'Services', ar: 'الخدمات' },
   footerExplore: { en: 'Explore', ar: 'استكشف' },
   footerContact: { en: 'Contact', ar: 'الاتصال' },
-  footerRights: { en: 'Salyaa Agency. All rights reserved.', ar: 'وكالة سيلية. جميع الحقوق محفوظة.' },
+  footerRights: { en: 'salyaa Agency. All rights reserved.', ar: 'وكالة سيلية. جميع الحقوق محفوظة.' },
   privacy: { en: 'Privacy Policy', ar: 'سياسة الخصوصية' },
   terms: { en: 'Terms of Service', ar: 'شروط الخدمة' },
 };
