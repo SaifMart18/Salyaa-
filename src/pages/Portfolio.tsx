@@ -40,17 +40,17 @@ export default function Portfolio() {
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 className="group block"
               >
-                <Link to={`/portfolio/${project.slug}`} className="cursor-pointer">
-                  <div className="aspect-[3/4] overflow-hidden rounded-[40px] mb-8 bg-white/[0.02] border border-white/5 relative">
+                <Link to={`/portfolio/${project.slug}`} className="cursor-pointer overflow-hidden rounded-3xl sm:rounded-[40px] mb-8 block">
+                  <div className="aspect-[4/5] sm:aspect-[3/4] overflow-hidden bg-white/[0.02] border border-white/5 relative">
                     <img 
                       src={project.image} 
                       alt={project.title} 
                       className="w-full h-full object-cover brightness-75 group-hover:brightness-100 transition-all duration-700 group-hover:scale-105"
                       referrerPolicy="no-referrer"
                     />
-                    <div className="absolute inset-0 bg-brand-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                      <div className="w-20 h-20 rounded-full bg-brand-blue flex items-center justify-center transform scale-50 group-hover:scale-100 transition-transform duration-500">
-                        <ArrowUpRight className="w-8 h-8 text-white" />
+                    <div className="absolute inset-0 bg-brand-black/40 opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-brand-blue flex items-center justify-center transform scale-50 group-hover:scale-100 transition-transform duration-500">
+                        <ArrowUpRight className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                       </div>
                     </div>
                   </div>

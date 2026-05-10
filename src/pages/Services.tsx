@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 import { 
   Globe, 
   ShoppingBag, 
@@ -77,10 +78,10 @@ export default function Services() {
   ];
 
   return (
-    <div className="pt-48 pb-24">
+    <div className="pt-32 md:pt-48 pb-24">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header Section */}
-        <div className={`mb-32 ${isRTL ? 'text-right' : 'text-left'}`}>
+        <div className={`mb-20 md:mb-32 ${isRTL ? 'text-right' : 'text-left'}`}>
           <motion.div
             initial={{ opacity: 0, x: isRTL ? 20 : -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -93,15 +94,15 @@ export default function Services() {
             {isRTL && <div className="h-[2px] w-12 bg-brand-blue" />}
           </motion.div>
           
-          <h1 className="text-7xl md:text-[140px] font-bold tracking-tighter leading-[0.8] mb-12">
+          <h1 className="text-5xl md:text-7xl lg:text-[140px] font-bold tracking-tighter leading-[0.9] md:leading-[0.8] mb-8 md:mb-12">
             {isRTL ? (
-              <>نصنع <span className="text-brand-blue">القيمة</span> <br/> الرقمية.</>
+              <>نصنع <span className="text-brand-blue">القيمة</span> <br className="hidden md:block" /> الرقمية.</>
             ) : (
-              <>Crafting Digital <br/> <span className="text-brand-blue">Value</span>.</>
+              <>Crafting Digital <br className="hidden md:block" /> <span className="text-brand-blue">Value</span>.</>
             )}
           </h1>
           
-          <p className={`text-2xl text-white/50 max-w-3xl leading-relaxed font-light ${isRTL ? 'ml-auto' : ''}`}>
+          <p className={`text-xl md:text-2xl text-white/50 max-w-3xl leading-relaxed font-light ${isRTL ? 'ml-auto' : ''}`}>
             {isRTL 
               ? 'نحن لا نبني مواقع فحسب، بل نصمم حلولاً تكنولوجية متكاملة تهدف لدفع نمو أعمالك وتحقيق أهدافك الطموحة في الفضاء الرقمي.'
               : 'We don\'t just build websites; we design integrated technological solutions aimed at driving your business growth and achieving your ambitious goals in the digital space.'}
@@ -109,7 +110,7 @@ export default function Services() {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {services.map((service, i) => (
             <motion.div
               key={service.id}
@@ -117,36 +118,34 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className={`group p-10 rounded-[50px] bg-white/[0.02] border border-white/5 hover:border-brand-blue/30 transition-all duration-500 relative overflow-hidden h-full flex flex-col ${isRTL ? 'text-right' : 'text-left'}`}
+              className={`group p-8 md:p-10 rounded-3xl md:rounded-[50px] bg-white/[0.02] border border-white/5 hover:border-brand-blue/30 transition-all duration-500 relative overflow-hidden h-full flex flex-col ${isRTL ? 'text-right' : 'text-left'}`}
             >
               <div className="absolute -top-20 -right-20 w-40 h-40 bg-brand-blue/5 blur-[80px] group-hover:bg-brand-blue/10 transition-all rounded-full" />
               
               <div className="relative z-10 flex flex-col h-full">
-                <div className={`p-5 rounded-2xl inline-block mb-10 transition-transform duration-500 group-hover:scale-110 w-fit ${service.color} ${isRTL ? 'mr-auto ml-0' : ''}`}>
+                <div className={`p-4 md:p-5 rounded-2xl inline-block mb-8 md:mb-10 transition-transform duration-500 group-hover:scale-110 w-fit ${service.color} ${isRTL ? 'mr-auto ml-0' : ''}`}>
                   {service.icon}
                 </div>
 
                 <div className="mb-4">
                   <span className="text-brand-blue font-mono text-sm tracking-widest opacity-40 block mb-2">{service.id}</span>
-                  <h3 className="text-3xl font-bold mb-6 text-white group-hover:text-brand-blue transition-colors">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-white group-hover:text-brand-blue transition-colors">
                     {service.title}
                   </h3>
                 </div>
 
-                <p className="text-lg text-white/40 leading-relaxed font-light mb-10 flex-grow">
+                <p className="text-base md:text-lg text-white/40 leading-relaxed font-light mb-8 md:mb-10 flex-grow">
                   {service.desc}
                 </p>
 
-                <div className="space-y-4 pt-6 border-t border-white/5">
+                <div className="space-y-3 md:space-y-4 pt-6 border-t border-white/5">
                   {service.features.map((feature, idx) => (
                     <div key={idx} className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
                       <div className="w-1.5 h-1.5 rounded-full bg-brand-blue" />
-                      <span className="text-sm font-bold text-white/60 tracking-tight">{feature}</span>
+                      <span className="text-xs md:text-sm font-bold text-white/60 tracking-tight">{feature}</span>
                     </div>
                   ))}
                 </div>
-
-
               </div>
             </motion.div>
           ))}
@@ -157,31 +156,29 @@ export default function Services() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="mt-32 p-16 md:p-24 rounded-[60px] bg-brand-blue relative overflow-hidden group"
+          className="mt-24 md:mt-32 p-10 md:p-24 rounded-3xl md:rounded-[60px] bg-brand-blue relative overflow-hidden group"
         >
           <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-black/10 blur-[80px] rounded-full -translate-x-1/3 translate-y-1/3" />
 
-          <div className={`relative z-10 flex flex-col md:flex-row items-center justify-between gap-12 ${isRTL ? 'md:flex-row-reverse' : ''}`}>
+          <div className={`relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 ${isRTL ? 'md:flex-row-reverse' : ''}`}>
             <div className={`max-w-2xl ${isRTL ? 'text-right' : 'text-left'}`}>
-              <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tighter mb-8 leading-tight">
+              <h2 className="text-3xl md:text-6xl font-bold text-white tracking-tighter mb-6 md:mb-8 leading-tight">
                 {isRTL ? 'جاهز لرفع مستوى عملك؟' : 'Ready to Elevate Your Business?'}
               </h2>
-              <p className="text-xl text-white/80 font-light leading-relaxed">
+              <p className="text-lg md:text-xl text-white/80 font-light leading-relaxed">
                 {isRTL 
                   ? 'دعنا نحول رؤيتك إلى واقع رقمي ملموس. فريقنا مستعد لبدء العمل على مشروعك القادم وتجاوز كل التوقعات.'
                   : 'Let\'s turn your vision into a tangible digital reality. Our team is ready to start working on your next project and exceed all expectations.'}
               </p>
             </div>
             
-            <motion.a 
-              href="/contact"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-12 py-6 bg-white text-brand-blue font-bold rounded-full text-xl hover:shadow-2xl transition-all whitespace-nowrap shadow-xl"
+            <Link 
+              to="/contact"
+              className="px-10 md:px-12 py-5 md:py-6 bg-white text-brand-blue font-bold rounded-full text-lg md:text-xl hover:shadow-2xl transition-all whitespace-nowrap shadow-xl text-center"
             >
               {isRTL ? 'ابدأ مشروعك الآن' : 'Start Your Project'}
-            </motion.a>
+            </Link>
           </div>
         </motion.div>
       </div>

@@ -63,13 +63,13 @@ export default function Navbar() {
 
         {/* Logo */}
         <div className={isRTL ? 'order-first' : 'order-last'}>
-          <Link to="/" className={`flex items-center gap-3 group ${isRTL ? '' : 'flex-row-reverse'}`}>
-            <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-brand-blue/30 shadow-[0_0_30px_rgba(59,130,246,0.3)] group-hover:scale-110 transition-all flex items-center justify-center bg-white/5 p-1">
+          <Link to="/" className={`flex items-center gap-2 md:gap-3 group ${isRTL ? '' : 'flex-row-reverse'}`}>
+            <div className="w-20 h-20 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-brand-blue/30 shadow-[0_0_30px_rgba(59,130,246,0.4)] group-hover:scale-110 transition-all flex items-center justify-center bg-white/5 p-1.5">
               <img src="https://lh3.googleusercontent.com/d/11V_O87SdW-ObGeHEPpYS_-FxaNVn7X9V" alt="Salyaa Logo" className="w-full h-full object-contain rounded-full" referrerPolicy="no-referrer" />
             </div>
             <div className={`flex flex-col leading-none ${isRTL ? 'text-right' : 'text-right'}`}>
-              <span className="text-2xl font-bold tracking-tighter text-white">sal<span className="text-brand-blue">yaa</span></span>
-              <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/40">Web Design Agency</span>
+              <span className="text-xl md:text-3xl font-bold tracking-tighter text-white">sal<span className="text-brand-blue">yaa</span></span>
+              <span className="text-[10px] md:text-[12px] font-bold tracking-[0.2em] uppercase text-white/40">Web Design Agency</span>
             </div>
           </Link>
         </div>
@@ -83,16 +83,16 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: isRTL ? -300 : 300 }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-50 bg-[#0B1120] flex flex-col p-8 pt-32 h-screen overflow-y-auto"
+            className="fixed inset-0 z-[60] bg-[#0B1120] flex flex-col p-8 pt-24 h-screen overflow-y-auto"
           >
             <button 
-              className="absolute top-8 right-8 w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-brand-blue transition-all" 
+              className="absolute top-6 right-6 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-brand-blue transition-all" 
               onClick={() => setIsOpen(false)}
             >
-              <X className="w-6 h-6" />
+              <X className="w-5 h-5 md:w-6 md:h-6" />
             </button>
 
-            <div className={`flex flex-col gap-10 ${isRTL ? 'items-end' : 'items-start'} max-w-lg mx-auto w-full`}>
+            <div className={`flex flex-col gap-8 md:gap-10 ${isRTL ? 'items-end' : 'items-start'} max-w-lg mx-auto w-full`}>
               <div className="space-y-4 w-full">
                 {navLinks.map((link, i) => (
                   <motion.div
@@ -104,7 +104,7 @@ export default function Navbar() {
                     <Link
                       to={link.path}
                       onClick={() => setIsOpen(false)}
-                      className={`text-5xl md:text-7xl font-bold tracking-tighter transition-all hover:text-brand-blue block py-2 ${
+                      className={`text-5xl sm:text-6xl md:text-8xl font-black tracking-tighter transition-all hover:text-brand-blue block py-2 ${
                         location.pathname === link.path ? 'text-brand-blue' : 'text-white'
                       }`}
                     >

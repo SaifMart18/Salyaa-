@@ -14,7 +14,7 @@ export default function Home() {
   const featuredProjects = getProjects(isRTL).slice(0, 2);
 
   return (
-    <div className="relative overflow-x-hidden bg-[#0B1120] text-white">
+    <div className="relative overflow-x-hidden bg-[#0B1120] text-white smooth-scroll">
       {/* Background Glows */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 -z-10 w-full max-w-[1400px] h-screen bg-brand-blue/5 blur-[150px] rounded-full opacity-30" />
 
@@ -55,7 +55,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className={`flex flex-col sm:flex-row items-center justify-center gap-4 mb-24 ${isRTL ? 'sm:flex-row-reverse' : ''}`}
+            className={`flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 ${isRTL ? 'sm:flex-row-reverse' : ''}`}
           >
             <Link to="/contact">
               <Button className="h-14 px-10 bg-brand-blue hover:bg-brand-blue/90 border-brand-blue text-sm rounded-lg">
@@ -73,9 +73,9 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
-            className="relative"
+            className="relative px-4 sm:px-0"
           >
-            <div className="relative aspect-[16/9] rounded-[40px] overflow-hidden border border-white/5 shadow-2xl">
+            <div className="relative aspect-video sm:aspect-[16/9] rounded-2xl sm:rounded-[40px] overflow-hidden border border-white/5 shadow-2xl">
               <img 
                 src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop" 
                 alt="Digital Agency Workflow" 
@@ -83,38 +83,6 @@ export default function Home() {
                 referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120] via-transparent to-transparent opacity-60" />
-            </div>
-
-            <div className={`absolute -right-8 bottom-20 z-20 space-y-4 hidden md:block ${isRTL ? '-right-auto -left-8' : ''}`}>
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.7 }}
-                className={`flex items-center gap-8 bg-[#141C2F]/80 backdrop-blur-xl border border-white/5 p-6 py-4 rounded-2xl shadow-2xl ${isRTL ? 'flex-row-reverse text-right' : ''}`}
-              >
-                <div>
-                  <span className="text-2xl font-bold text-white block">600+</span>
-                  <span className="text-[10px] text-white/30 font-bold uppercase tracking-widest">{t('heroStatProjects')}</span>
-                </div>
-                <div className="w-10 h-10 bg-brand-blue/10 rounded-full flex items-center justify-center text-brand-blue">
-                  <TrendingUp className="w-5 h-5" />
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.8 }}
-                className={`flex items-center gap-8 bg-[#141C2F]/80 backdrop-blur-xl border border-white/5 p-6 py-4 rounded-2xl shadow-2xl ${isRTL ? 'flex-row-reverse text-right' : ''}`}
-              >
-                <div>
-                  <span className="text-2xl font-bold text-white block">7+</span>
-                  <span className="text-[10px] text-white/30 font-bold uppercase tracking-widest">{t('heroStatYears')}</span>
-                </div>
-                <div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-white/50">
-                  <Star className="w-5 h-5" />
-                </div>
-              </motion.div>
             </div>
           </motion.div>
         </div>
@@ -216,23 +184,23 @@ export default function Home() {
             <h2 className="text-4xl md:text-6xl font-bold tracking-tight">{t('portfolioGridTitle')}</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 px-4 sm:px-0">
             {featuredProjects.map((project) => (
               <motion.div 
                 key={project.id}
                 whileHover={{ y: -10 }}
-                className="group relative rounded-[40px] overflow-hidden border border-white/5"
+                className="group relative rounded-3xl sm:rounded-[40px] overflow-hidden border border-white/5 bg-white/[0.02]"
               >
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full aspect-[4/3] object-cover transition-all duration-700"
+                  className="w-full aspect-square sm:aspect-[4/3] object-cover transition-all duration-700"
                   referrerPolicy="no-referrer"
                 />
-                <Link to={`/portfolio/${project.slug}`} className="absolute inset-0 bg-gradient-to-t from-[#0B1120] to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex flex-col justify-end p-12 text-right">
-                  <span className="text-brand-blue font-bold text-xs tracking-widest uppercase mb-4">{project.category}</span>
-                  <h3 className="text-3xl font-bold mb-6">{project.title}</h3>
-                  <Button variant="outline" className="w-fit h-12 text-xs border-white/20">{isRTL ? 'عرض التفاصيل' : 'View Details'}</Button>
+                <Link to={`/portfolio/${project.slug}`} className="absolute inset-0 bg-gradient-to-t from-[#0B1120] to-transparent opacity-0 group-hover:opacity-95 transition-all flex flex-col justify-end p-8 sm:p-12 text-right">
+                  <span className="text-brand-blue font-bold text-[10px] sm:text-xs tracking-widest uppercase mb-2 sm:mb-4">{project.category}</span>
+                  <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">{project.title}</h3>
+                  <Button variant="outline" className="w-fit h-10 sm:h-12 text-[10px] sm:text-xs border-white/20">{isRTL ? 'عرض التفاصيل' : 'View Details'}</Button>
                 </Link>
               </motion.div>
             ))}
