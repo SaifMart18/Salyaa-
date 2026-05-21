@@ -35,7 +35,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl lg:text-[70px] font-bold leading-[1.1] tracking-tight mb-10"
+            className={`text-4xl md:text-6xl lg:text-[70px] font-bold leading-[1.2] mb-10 ${isRTL ? 'tracking-normal' : 'tracking-tight'}`}
           >
             {t('heroTitle1')}
             <span className="text-[#3B82F6]">{t('heroTitleHighlight')}</span>
@@ -46,7 +46,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-base md:text-[17px] text-white/50 max-w-3xl mx-auto mb-12 leading-[1.8] font-light"
+            className="text-base md:text-lg text-slate-300 max-w-3xl mx-auto mb-12 leading-[1.8] font-normal"
           >
             {t('heroSub')}
           </motion.p>
@@ -55,25 +55,28 @@ export default function Home() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className={`flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 ${isRTL ? 'sm:flex-row-reverse' : ''}`}
+            className={`flex flex-row items-center justify-center gap-3 sm:gap-4 mb-16 ${isRTL ? 'flex-row-reverse' : ''}`}
           >
             <Link to="/contact">
-              <Button className="h-14 px-10 bg-brand-blue hover:bg-brand-blue/90 border-brand-blue text-sm rounded-lg">
+              <Button className="h-14 px-6 sm:px-10 bg-brand-blue hover:bg-brand-blue/90 border-brand-blue text-xs sm:text-sm rounded-full">
                 {t('heroStartBtn')}
               </Button>
             </Link>
             <Link to="/portfolio">
-              <Button variant="outline" className="h-14 px-10 border-white/10 hover:bg-white/5 text-sm rounded-lg">
+              <Button variant="outline" className="h-14 px-6 sm:px-10 border-white/10 hover:bg-white/5 text-xs sm:text-sm rounded-full">
                 {t('heroWorksBtn')}
               </Button>
             </Link>
           </motion.div>
+        </div>
 
+        {/* Larger Showcase Image Container */}
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
-            className="relative px-4 sm:px-0"
+            className="relative"
           >
             <div className="relative aspect-video sm:aspect-[16/9] rounded-2xl sm:rounded-[40px] overflow-hidden border border-white/5 shadow-2xl">
               <img 
@@ -116,20 +119,20 @@ export default function Home() {
 
             <div className={`flex-1 space-y-8 ${isRTL ? 'text-right' : 'text-left'}`}>
               <span className="text-brand-blue font-bold text-xs tracking-widest uppercase block">{isRTL ? 'من نحن' : 'Who We Are'}</span>
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-[1.2]">
+              <h2 className={`text-4xl md:text-5xl font-bold leading-[1.3] ${isRTL ? 'tracking-normal' : 'tracking-tight'}`}>
                 {t('aboutPartnerTitle')}
               </h2>
-              <p className="text-lg text-white/50 leading-relaxed font-light">
+              <p className="text-base md:text-lg text-slate-300 leading-relaxed font-normal">
                 {t('aboutPartnerDesc')}
               </p>
               
               <ul className="space-y-4 pt-4">
                 {[t('aboutPoint1'), t('aboutPoint2')].map((point, i) => (
-                  <li key={i} className={`flex items-center gap-4 text-white/70 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                    <div className="w-5 h-5 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue">
+                  <li key={i} className={`flex items-center gap-4 text-slate-200 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                    <div className="w-5 h-5 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue flex-shrink-0">
                       <Check className="w-3 h-3" />
                     </div>
-                    <span>{point}</span>
+                    <span className="text-sm md:text-base">{point}</span>
                   </li>
                 ))}
               </ul>
@@ -148,7 +151,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20 space-y-6">
             <span className="text-brand-blue font-bold text-xs tracking-widest uppercase block">{t('servicesBadge')}</span>
-            <h2 className="text-4xl md:text-6xl font-bold tracking-tight">{t('servicesSectionTitle')}</h2>
+            <h2 className={`text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.25] max-w-4xl mx-auto ${isRTL ? 'tracking-normal' : 'tracking-tight'}`}>{t('servicesSectionTitle')}</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -158,12 +161,12 @@ export default function Home() {
               { title: t('serviceCloud'), desc: t('serviceCloudDesc'), icon: <Server className="w-6 h-6" /> },
               { title: t('serviceSupport'), desc: t('serviceSupportDesc'), icon: <Headphones className="w-6 h-6" /> }
             ].map((s, i) => (
-              <div key={i} className={`p-10 rounded-3xl bg-[#141C2F] border border-white/5 hover:border-brand-blue/30 transition-all group ${isRTL ? 'text-right' : 'text-left'}`}>
+              <div key={i} className={`p-10 rounded-3xl bg-[#141C2F]/60 backdrop-blur-md border border-white/5 hover:border-brand-blue/30 transition-all group ${isRTL ? 'text-right' : 'text-left'}`}>
                 <div className={`w-14 h-14 bg-white/[0.03] rounded-2xl flex items-center justify-center text-brand-blue mb-8 group-hover:bg-brand-blue group-hover:text-white transition-colors ${isRTL ? 'mr-0 ml-auto' : ''}`}>
                   {s.icon}
                 </div>
                 <h3 className="text-xl font-bold mb-4">{s.title}</h3>
-                <p className="text-white/40 text-sm leading-relaxed mb-8">
+                <p className="text-slate-300 text-[14px] leading-relaxed mb-8">
                   {s.desc}
                 </p>
                 <Link to="/services" className={`inline-flex items-center gap-2 text-xs font-bold text-white/60 hover:text-brand-blue transition-colors group ${isRTL ? 'flex-row-reverse' : ''}`}>
@@ -181,7 +184,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20 space-y-6">
             <span className="text-brand-blue font-bold text-xs tracking-widest uppercase block">{isRTL ? 'أعمالنا' : 'Portfolio'}</span>
-            <h2 className="text-4xl md:text-6xl font-bold tracking-tight">{t('portfolioGridTitle')}</h2>
+            <h2 className={`text-4xl md:text-5xl lg:text-6xl font-bold ${isRTL ? 'tracking-normal' : 'tracking-tight'}`}>{t('portfolioGridTitle')}</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 px-4 sm:px-0">
@@ -221,7 +224,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <span className="text-brand-blue font-bold text-xs tracking-widest uppercase block mb-6">{isRTL ? 'لماذا نحن' : 'Why Us'}</span>
-            <h2 className="text-4xl md:text-6xl font-bold tracking-tight">{t('performanceTitle')}</h2>
+            <h2 className={`text-4xl md:text-5xl lg:text-6xl font-bold ${isRTL ? 'tracking-normal' : 'tracking-tight'}`}>{t('performanceTitle')}</h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
@@ -230,13 +233,13 @@ export default function Home() {
               { title: t('perf2Title'), desc: t('perf2Desc'), icon: <Shield className="w-6 h-6" /> },
               { title: t('perf3Title'), desc: t('perf3Desc'), icon: <MessageCircle className="w-6 h-6" /> }
             ].map((p, i) => (
-              <div key={i} className={`p-10 rounded-3xl bg-[#141C2F] border border-white/5 flex gap-8 ${isRTL ? 'flex-row-reverse text-right' : 'text-left'}`}>
+              <div key={i} className={`p-10 rounded-3xl bg-[#141C2F]/60 backdrop-blur-md border border-white/5 flex gap-8 ${isRTL ? 'flex-row-reverse text-right' : 'text-left'}`}>
                 <div className="w-12 h-12 bg-white/5 rounded-2xl flex-shrink-0 flex items-center justify-center text-brand-blue">
                   {p.icon}
                 </div>
                 <div className="space-y-4">
                   <h3 className="text-xl font-bold">{p.title}</h3>
-                  <p className="text-white/40 text-sm leading-relaxed">{p.desc}</p>
+                  <p className="text-slate-300 text-sm leading-relaxed">{p.desc}</p>
                 </div>
               </div>
             ))}
@@ -250,7 +253,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
             <div className={`space-y-6 ${isRTL ? 'text-right md:order-last' : 'text-left'}`}>
               <span className="text-brand-blue font-bold text-xs tracking-widest uppercase block">{isRTL ? 'آراء العملاء' : 'Testimonials'}</span>
-              <h2 className="text-4xl md:text-6xl font-bold tracking-tight">{t('testimonialsTitle')}</h2>
+              <h2 className={`text-4xl md:text-5xl lg:text-6xl font-bold ${isRTL ? 'tracking-normal' : 'tracking-tight'}`}>{t('testimonialsTitle')}</h2>
             </div>
             <div className="flex gap-4">
               <button className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:bg-brand-blue hover:text-white transition-all">
@@ -282,13 +285,13 @@ export default function Home() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.2 }}
-                className={`p-12 rounded-[40px] bg-[#141C2F] border border-white/5 relative flex flex-col justify-between ${isRTL ? 'text-right' : 'text-left'}`}
+                className={`p-12 rounded-[40px] bg-[#141C2F]/60 backdrop-blur-md border border-white/5 relative flex flex-col justify-between ${isRTL ? 'text-right' : 'text-left'}`}
               >
                 <div className="space-y-6">
                   <div className={`flex gap-1 text-[#FBBF24] ${isRTL ? 'justify-end' : 'justify-start'}`}>
                     {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
                   </div>
-                  <p className="text-xl text-white/70 leading-relaxed font-light italic">
+                  <p className="text-lg md:text-xl text-slate-200 leading-relaxed font-normal">
                     "{test.text}"
                   </p>
                 </div>
@@ -308,13 +311,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FAQ & CTA */}
       <section className="py-40 px-6">
         <div className="max-w-4xl mx-auto text-center space-y-12">
-          <h2 className="text-5xl md:text-7xl font-bold tracking-tighter leading-tight">
+          <h2 className={`text-4xl md:text-6xl lg:text-[70px] font-bold leading-[1.2] ${isRTL ? 'tracking-normal' : 'tracking-tighter'}`}>
             {t('ctaReadyTitle')}
           </h2>
-          <p className="text-xl text-white/40 font-light leading-relaxed max-w-2xl mx-auto">
+          <p className="text-base md:text-xl text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto">
             {t('ctaReadySub')}
           </p>
           <Link to="/contact">
@@ -326,14 +328,39 @@ export default function Home() {
       </section>
 
       {/* Floating WhatsApp */}
-      <a 
+      <motion.a 
         href="https://wa.me/9647882377036" 
         target="_blank" 
         rel="noopener noreferrer"
-        className={`fixed bottom-8 ${isRTL ? 'left-8' : 'right-8'} p-4 bg-[#25D366] text-white rounded-full shadow-2xl hover:scale-110 transition-transform z-50`}
+        className={`fixed bottom-8 ${isRTL ? 'left-8' : 'right-8'} p-4 bg-[#25D366] text-white rounded-full z-50 flex items-center justify-center`}
+        animate={{ 
+          scale: [1, 1.06, 1],
+          boxShadow: [
+            "0 0 15px rgba(37, 211, 102, 0.4)",
+            "0 0 35px rgba(37, 211, 102, 0.8)",
+            "0 0 15px rgba(37, 211, 102, 0.4)"
+          ]
+        }}
+        transition={{
+          duration: 2,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+        whileHover={{ 
+          scale: 1.15, 
+          boxShadow: "0 0 45px rgba(37, 211, 102, 0.95)",
+          transition: { duration: 0.2 }
+        }}
+        whileTap={{ scale: 0.95 }}
       >
-        <MessageCircle className="w-8 h-8 fill-current" />
-      </a>
+        <svg 
+          viewBox="0 0 24 24" 
+          className="w-8 h-8 fill-current" 
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.454 5.709 1.455h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+      </motion.a>
     </div>
   );
 }
