@@ -37,7 +37,7 @@ export default function Navbar() {
     <nav 
       id="main-navbar"
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? 'py-4 bg-[#0B1120]/90 backdrop-blur-md border-b border-white/5' : 'py-6 bg-transparent'
+        scrolled ? 'py-3 bg-[#0B1120]/95 backdrop-blur-md border-b border-white/5' : 'py-4 bg-[#0B1120]/40 backdrop-blur-sm'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
@@ -45,7 +45,7 @@ export default function Navbar() {
         <div className={`flex items-center gap-6 ${isRTL ? 'order-last' : 'order-first'}`}>
           <button 
             id="mobile-menu-toggle"
-            className="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-white hover:bg-brand-blue hover:border-brand-blue transition-all group" 
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-white hover:bg-brand-blue hover:border-brand-blue transition-all group" 
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle Menu"
           >
@@ -64,12 +64,12 @@ export default function Navbar() {
         {/* Logo */}
         <div className={isRTL ? 'order-first' : 'order-last'}>
           <Link to="/" className={`flex items-center gap-2 md:gap-3 group ${isRTL ? '' : 'flex-row-reverse'}`}>
-            <div className="w-20 h-20 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-brand-blue/30 shadow-[0_0_30px_rgba(59,130,246,0.4)] group-hover:scale-110 transition-all flex items-center justify-center bg-white/5 p-1.5">
+            <div className="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden border border-brand-blue/30 shadow-[0_0_20px_rgba(59,130,246,0.3)] group-hover:scale-105 transition-all flex items-center justify-center bg-white/5 p-1">
               <img src="https://lh3.googleusercontent.com/d/11V_O87SdW-ObGeHEPpYS_-FxaNVn7X9V" alt="salyaa Logo" className="w-full h-full object-contain rounded-full" referrerPolicy="no-referrer" />
             </div>
             <div className={`flex flex-col leading-none ${isRTL ? 'text-right' : 'text-right'}`}>
-              <span className="text-xl md:text-3xl font-bold tracking-tighter text-white">sal<span className="text-brand-blue">yaa</span></span>
-              <span className="text-[10px] md:text-[12px] font-bold tracking-[0.2em] uppercase text-white/40">Web Design Agency</span>
+              <span className="text-lg md:text-2xl font-bold tracking-tighter text-white">sal<span className="text-brand-blue">yaa</span></span>
+              <span className="text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase text-white/40">Web Design Agency</span>
             </div>
           </Link>
         </div>
@@ -92,20 +92,20 @@ export default function Navbar() {
               <X className="w-5 h-5 md:w-6 md:h-6" />
             </button>
 
-            <div className={`flex flex-col gap-8 md:gap-10 ${isRTL ? 'items-end' : 'items-start'} max-w-lg mx-auto w-full`}>
-              <div className="space-y-4 w-full">
+            <div className={`flex flex-col gap-6 md:gap-8 ${isRTL ? 'items-end' : 'items-start'} max-w-md mx-auto w-full`}>
+              <div className="space-y-3 w-full">
                 {navLinks.map((link, i) => (
                   <motion.div
                     key={link.path}
                     initial={{ opacity: 0, x: isRTL ? 30 : -30 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.1 }}
+                    transition={{ delay: i * 0.08 }}
                   >
                     <Link
                       to={link.path}
                       onClick={() => setIsOpen(false)}
-                      className={`text-5xl sm:text-6xl md:text-8xl font-black tracking-tighter transition-all hover:text-brand-blue block py-2 ${
-                        location.pathname === link.path ? 'text-brand-blue' : 'text-white'
+                      className={`text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight transition-all duration-300 hover:text-brand-blue hover:translate-x-1 block py-1.5 ${
+                        location.pathname === link.path ? 'text-brand-blue' : 'text-slate-100'
                       }`}
                     >
                       {link.name}
@@ -117,13 +117,13 @@ export default function Navbar() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: navLinks.length * 0.1 }}
-                className="pt-10 flex flex-col gap-8 w-full"
+                transition={{ delay: navLinks.length * 0.08 }}
+                className="pt-6 flex flex-col gap-6 w-full"
               >
                 <Link 
                   to="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="px-12 py-5 bg-brand-blue rounded-full font-bold text-xl hover:scale-105 transition-transform text-white text-center"
+                  className="px-8 py-3.5 bg-brand-blue rounded-full font-bold text-base hover:scale-105 transition-all text-white text-center shadow-[0_4px_20px_rgba(59,130,246,0.25)]"
                 >
                   {t('startProject')}
                 </Link>
@@ -133,9 +133,9 @@ export default function Navbar() {
                     toggleLanguage();
                     setIsOpen(false);
                   }}
-                  className="flex items-center gap-3 text-white/40 hover:text-white transition-colors text-lg font-bold"
+                  className={`flex items-center gap-2 text-white/50 hover:text-white transition-colors text-sm font-bold ${isRTL ? 'justify-end' : 'justify-start'}`}
                 >
-                  <Globe className="w-5 h-5" />
+                  <Globe className="w-4 h-4" />
                   {language === 'en' ? 'Arabic Version' : 'English Version'}
                 </button>
               </motion.div>

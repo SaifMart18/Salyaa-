@@ -63,21 +63,8 @@ export default function ProjectDetail() {
           </div>
         </motion.div>
 
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.2 }}
-          className="aspect-video w-full rounded-[60px] overflow-hidden mb-24 border border-white/10"
-        >
-          <img 
-            src={project.image} 
-            alt={project.title} 
-            className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
-          />
-        </motion.div>
-
-        <div className={`grid grid-cols-1 lg:grid-cols-3 gap-20 ${isRTL ? 'lg:flex-row-reverse' : ''}`}>
+        {/* Content Section */}
+        <div className={`grid grid-cols-1 lg:grid-cols-3 gap-16 ${isRTL ? 'lg:flex-row-reverse' : ''}`}>
           <div className={`lg:col-span-2 space-y-12 ${isRTL ? 'text-right' : 'text-left'}`}>
             <section>
               <h2 className="text-3xl font-bold mb-6 border-b border-white/5 pb-4 inline-block">

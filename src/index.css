@@ -44,6 +44,25 @@
   scroll-behavior: smooth;
 }
 
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-slow {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.marquee-container:hover .animate-marquee-slow {
+  animation-play-state: paused;
+}
+
 /* Custom Cursor or other premium decorations could go here */
 ::-webkit-scrollbar {
   width: 8px;

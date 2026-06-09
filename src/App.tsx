@@ -8,7 +8,6 @@ import { useEffect } from 'react';
 import { LanguageProvider } from './context/LanguageContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import SplashLoader from './components/SplashLoader';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import Portfolio from './pages/Portfolio';
@@ -27,7 +26,6 @@ function ScrollToTop() {
 export default function App() {
   return (
     <LanguageProvider>
-      <SplashLoader />
       <BrowserRouter>
         <ScrollToTop />
         <div className="min-h-screen flex flex-col bg-brand-black">
